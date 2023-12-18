@@ -45,6 +45,9 @@ function handleClick(evt) {
   const sqIdx = parseInt(evt.target.id.replace('sq', ' '))
   if (board[sqIdx] || winner) return
   placePiece(sqIdx)
+  checkForTie()
+  checkForWinner()
+  render()
 }
 
 // Step 6.1 - `placePiece`
@@ -71,7 +74,13 @@ function checkForTie() {
   //       Option 1) Loop through each of the winning combination arrays defined in the `winningCombos` array. Total up the three board positions using the three indexes in the current combo. Convert the total to an absolute value (convert any negative total to  positive). If the total equals 3, we have a winner, and can set `winner` to true.
   //       Option 2) For each one of the winning combinations you wrote in step 5, find the total of each winning combination. Convert the total to an absolute value (convert any negative total to positive). If the total equals 3, we have a winner, and can set `winner` to true.
 
-
+function checkForWinner() {
+  winningCombos.forEach(function(combo) {
+    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] === 3)) {
+      winner = true
+    }
+  })
+}
 
 // 6.4 - `switchPlayerTurn`
   // 6.4a) Create a function called `switchPlayerTurn`.
@@ -103,7 +112,7 @@ function checkForTie() {
 init() /* <-- call function to test `init` */
 
 function init() {
-  board = [1, null, null, -1, null, null, null, null, null]
+  board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = false
   tie = false
