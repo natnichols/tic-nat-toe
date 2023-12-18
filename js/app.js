@@ -11,6 +11,13 @@ const winningCombos = [
   [2, 4, 6]
 ]
 
+const hornSound = new Audio('../assets/audio/horn.wav')
+const meowSound = new Audio('../assets/audio/meow.wav')
+const laserSound = new Audio('../assets/audio/laser.wav')
+hornSound.volume = 0.3
+meowSound.volume = 0.3
+laserSound.volume = 0.3
+
 /*----- Variables (state) -----*/
 
 let board, turn, winner, tie
@@ -63,6 +70,7 @@ function handleClick(evt) {
 
 function placePiece(idx) {
   board[idx] = turn
+  laserSound.play()
 }
 
 function checkForTie() {
@@ -70,6 +78,8 @@ function checkForTie() {
     return
   } else {
     tie = true
+    setTimeout(() => {meowSound.play()}, 500);
+    meowSound.play()
   }
 }
 
@@ -79,6 +89,8 @@ function checkForWinner() {
     if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]) === 3) {
       // console.log(turn)
       winner = true
+      setTimeout(() => {hornSound.play()}, 750);
+      hornSound.play()
       confetti.start(2000)
     }
   })
@@ -97,6 +109,7 @@ function updateBoard() {
       // put an X in the square
       squareEls[idx].textContent = `X`
       squareEls[idx].style.backgroundColor = `#F95738`
+      squareEls[idx].classList.add('animate__animated', 'animate__jello')
       // console.log(`X in this square`)
     } 
     if (sqrVal === -1) {
@@ -104,13 +117,14 @@ function updateBoard() {
       squareEls[idx].textContent = `O`
       squareEls[idx].style.backgroundColor = `#0D3B66`
       squareEls[idx].style.color = `#FAF0CA`
+      squareEls[idx].classList.add('animate__animated', 'animate__jello')
       // console.log(`O in this square`)
     } 
     if (sqrVal === null){
       // Must display empty square so that board can be reset
       squareEls[idx].textContent = ``
       squareEls[idx].style.backgroundColor = `#F4D35E`
-
+      squareEls[idx].classList.remove('animate__animated', 'animate__jello')
       // console.log(`Mulder it's a null square`)
     }
   })
