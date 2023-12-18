@@ -54,6 +54,7 @@ function handleClick(evt) {
     return
   }
   placePiece(sqIdx)
+  console.log(board)
   checkForWinner()
   checkForTie()
   switchPlayerTurn()
@@ -74,8 +75,10 @@ function checkForTie() {
 
 function checkForWinner() {
   winningCombos.forEach(combo => {
+    console.log('winner function running')
     //need to make sure ALL winner combos work!! **appears to not be working if there is 1 square blank after O's winning combo is played**
-    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] === 3)) {
+    if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]) === 3) {
+      console.log(turn)
       winner = true
       confetti.start(2000)
     }
@@ -96,12 +99,14 @@ function updateBoard() {
       squareEls[idx].textContent = `X`
       squareEls[idx].style.backgroundColor = `indigo`
       // console.log(`X in this square`)
-    } else if (sqrVal === -1) {
+    } 
+    if (sqrVal === -1) {
       // put a Y in the square
       squareEls[idx].textContent = `O`
       squareEls[idx].style.backgroundColor = `lightseagreen`
       // console.log(`O in this square`)
-    } else {
+    } 
+    if (sqrVal === null){
       // Must display empty square so that board can be reset
       squareEls[idx].textContent = ``
       squareEls[idx].style.backgroundColor = `grey`
