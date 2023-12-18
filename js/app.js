@@ -36,7 +36,11 @@ const messageEl = document.getElementById("message")
   // 3g) Call a function called `render` at the end of the `init` function.
 function init() {
   let board = [null, null, null, null, null, null, null, null, null]
-  // console.log(board, `Mulder it's me`)
+  let turn = 1
+  let winner = false
+  let tie = false
+  render()
+  // console.log(board, turn, winner, tie, `Mulder it's me`)
 }
 
 init() /* <-- call function to test `init` */
