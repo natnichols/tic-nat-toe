@@ -43,7 +43,6 @@ function init() {
   winner = false
   tie = false
   render()
-  // console.log(board, turn, winner, tie, `Mulder it's the end of the init function`)
 }
 
 // Step 4 - The state of the game should be rendered to the user
@@ -65,14 +64,18 @@ function updateBoard() {
     if (board[idx] === 1) {
       // put an X in the square
       squareEls[idx].textContent = `X`
+      squareEls[idx].style.backgroundColor = `indigo`
       // console.log(`X in this square`)
     } else if (board[idx] === -1) {
       // put a Y in the square
       squareEls[idx].textContent = `O`
+      squareEls[idx].style.backgroundColor = `lightseagreen`
       // console.log(`O in this square`)
     } else {
       // Must display empty square so that board can be reset
       squareEls[idx].textContent = ``
+      squareEls[idx].style.backgroundColor = `grey`
+
       // console.log(`Mulder it's a null square`)
     }
   })
