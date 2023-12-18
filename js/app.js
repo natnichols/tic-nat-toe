@@ -64,7 +64,7 @@ function updateBoard() {
   board.forEach(function(sqrVal, idx) {
     if (board[idx] === 1) {
       // put an X in the square
-      // squareEls.textContent = `X`
+      squareEls[idx].textContent = `X`
       console.log(`X in this square`)
     } else if (board[idx] === -1) {
       // put a Y in the square
