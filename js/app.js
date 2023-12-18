@@ -23,7 +23,7 @@ const squareEls = document.querySelectorAll('.sqr')
 // console.log(squareEls)
 const messageEl = document.getElementById('message')
 // console.log(messageEl)
-const resetBtnEl = document.querySelector('button')
+const resetBtnEl = document.getElementById('reset')
 // console.log(resetBtnEl)
 
 /*----- Event Listeners -----*/
@@ -54,8 +54,8 @@ function handleClick(evt) {
     return
   }
   placePiece(sqIdx)
-  checkForTie()
   checkForWinner()
+  checkForTie()
   switchPlayerTurn()
   render()
 }
@@ -73,7 +73,7 @@ function checkForTie() {
 }
 
 function checkForWinner() {
-  winningCombos.forEach(function(combo) {
+  winningCombos.forEach(combo => {
     //need to make sure ALL winner combos work!! **appears to not be working if there is 1 square blank after O's winning combo is played**
     if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] === 3)) {
       winner = true
@@ -83,8 +83,9 @@ function checkForWinner() {
 }
 
 function switchPlayerTurn() {
-  if (winner) return
-  turn *= -1
+  if (!winner) {
+    turn *= -1
+  }
 }
 
 function updateBoard() {
