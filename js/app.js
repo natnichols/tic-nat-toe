@@ -85,12 +85,12 @@ function updateBoard() {
 function updateMessage() {
   // console.log(`Mulder it's me updating the message`)
   // step 4d starts here
-  if () {
-
-  } else if () {
-
+  if (!winner && !tie) {
+    messageEl.textContent = `It's ${turn === 1 ? 'X' : 'O'}'s turn!`
+  } else if (!winner && tie) {
+    messageEl.textContent = `It's a tie! That's called a Cat's Game!`
   } else {
-
+    messageEl.textContent = `Congratulations, you've won Tic-Tac-Toe!`
   }
 }
 // updateMessage() /* <-- call function to test `updateMessage` */
