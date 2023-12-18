@@ -96,19 +96,20 @@ function updateBoard() {
     if (sqrVal === 1) {
       // put an X in the square
       squareEls[idx].textContent = `X`
-      squareEls[idx].style.backgroundColor = `indigo`
+      squareEls[idx].style.backgroundColor = `#F95738`
       // console.log(`X in this square`)
     } 
     if (sqrVal === -1) {
       // put a Y in the square
       squareEls[idx].textContent = `O`
-      squareEls[idx].style.backgroundColor = `lightseagreen`
+      squareEls[idx].style.backgroundColor = `#0D3B66`
+      squareEls[idx].style.color = `#FAF0CA`
       // console.log(`O in this square`)
     } 
     if (sqrVal === null){
       // Must display empty square so that board can be reset
       squareEls[idx].textContent = ``
-      squareEls[idx].style.backgroundColor = `grey`
+      squareEls[idx].style.backgroundColor = `#F4D35E`
 
       // console.log(`Mulder it's a null square`)
     }

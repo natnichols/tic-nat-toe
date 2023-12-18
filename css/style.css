@@ -1,14 +1,17 @@
 body {
-  background-color: gray;
+  /* background-color: gray; */
 	/* Use a system font, if none are available use an available sans-sarif   font */
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	margin: 0;
+	font-family: 'Saira Semi Condensed', sans-serif;
+	color: #0b2c4e;
+  margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #faf0ca;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23ee964b' fill-opacity='0.17'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+  letter-spacing: 1px;
 }
 
 section.board {
@@ -17,15 +20,17 @@ section.board {
   grid-template-columns: repeat(3, 10vmin);
   grid-gap: 0vmin;
   cursor: pointer;
+  background-color: #F4D35E;
 }
 
 div {
-  border: 3px solid black;
+  border: 2px solid #0b2c4e;
   font-size: 7vmin;
   align-items: center;
   justify-content: center;
-  margin: 3px;
-  padding: 5px;
+  /* margin: 3px;
+  padding: 5px; */
+  display: flex;
 }
 
 .sqr {
@@ -36,12 +41,32 @@ div {
 }
 
 button {
-  margin-top: 15px;
+  margin-top: 20px;
   border-radius: 5px;
-  background-color: lightgreen;
+  color: #0b2c4e;
+  background-color: #EE9643;
+  font-size: 24px;
+  padding: 8px 12px;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: pink;
+  color: #FAF0CA;
+  background-color: #0D3B66;
   cursor: pointer;
+}
+
+.left {
+  border-left: 4px solid #0b2c4e;
+}
+.top {
+  border-top: 4px solid #0b2c4e;
+}
+.right {
+  border-right: 4px solid #0b2c4e;
+}
+.bottom {
+  border-bottom: 4px solid #0b2c4e;
 }
