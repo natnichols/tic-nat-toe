@@ -43,26 +43,34 @@ squareEls.forEach(function(squareEl) {
 
 function handleClick(evt) {
   const sqIdx = parseInt(evt.target.id.replace('sq', ' '))
-  if (board[sqIdx] || winner) {
-    return
-  }
+  if (board[sqIdx] || winner) return
+  placePiece(sqIdx)
 }
 
 // Step 6.1 - `placePiece`
   // 6.1a) Create a function named placePiece that accepts an `idx` parameter.
   // 6.1b) Update the `board` array at the `idx` so that it is equal to the current value of `turn`.
 
+function placePiece(idx) {
+  board[idx] = turn
+}
+
 
 // 6.2 - `checkForTie`
-  // 6.2a) Create a function named `checkForTie`.
-  // 6.2b) Check if the `board` array still contains any `null` elements. If it does, we can leave `tie` as false. Otherwise, set `tie` to true.
+// 6.2a) Create a function named `checkForTie`.
+// 6.2b) Check if the `board` array still contains any `null` elements. If it does, we can leave `tie` as false. Otherwise, set `tie` to true.
 
+function checkForTie() {
+  if (board.includes(null)) return
+  tie = true
+}
 
 // 6.3 - `checkForWinner`
   // 6.3a) Create a function called `checkForWinner`
   // 6.3b) Determine if a player has won using one of the two options below. Option 1 is a more elegant method that takes advantage of the `winningCombos` array you wrote above in step 5. Option 2 might be a little simpler to comprehend, but you'll need to write more code. This option won't take advantage of the winningCombos array, but using it as a reference will help you build a solution. Ensure you choose only one path.
   //       Option 1) Loop through each of the winning combination arrays defined in the `winningCombos` array. Total up the three board positions using the three indexes in the current combo. Convert the total to an absolute value (convert any negative total to  positive). If the total equals 3, we have a winner, and can set `winner` to true.
   //       Option 2) For each one of the winning combinations you wrote in step 5, find the total of each winning combination. Convert the total to an absolute value (convert any negative total to positive). If the total equals 3, we have a winner, and can set `winner` to true.
+
 
 
 // 6.4 - `switchPlayerTurn`
