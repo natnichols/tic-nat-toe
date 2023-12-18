@@ -17,9 +17,9 @@ let board, turn, winner, tie
   // 2a) In a constant called `squareEls`, store the nine elements representing the squares on the page.
   // 2b) In a constant called `messageEl`, store the element that displays the game's status on the page.
 const squareEls = document.querySelectorAll('.sqr')
-console.log(squareEls)
+// console.log(squareEls)
 const messageEl = document.getElementById('message')
-console.log(messageEl)
+// console.log(messageEl)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -34,15 +34,17 @@ console.log(messageEl)
   // 3e) Set the `winner` to false.
   // 3f) Set `tie` to false.
   // 3g) Call a function called `render` at the end of the `init` function.
+
+// init() /* <-- call function to test `init` */
+
 function init() {
-  let board = [null, null, null, null, null, null, null, null, null]
-  let turn = 1
-  let winner = false
-  let tie = false
+  board = [null, null, null, null, null, null, null, null, null]
+  turn = 1
+  winner = false
+  tie = false
   render()
   // console.log(board, turn, winner, tie, `Mulder it's the end of the init function`)
 }
-// init() /* <-- call function to test `init` */
 
 // Step 4 - The state of the game should be rendered to the user
   // 4a) Create a function called `render`, then set it aside for now.
