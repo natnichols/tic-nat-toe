@@ -3,6 +3,12 @@
 
 
 /*---------------------------- Variables (state) ----------------------------*/
+// Step 1 - Define the required variables used to track the state of the game
+  // 1a) Use a variable named `board` to represent the state of the squares on the board.
+  // 1b) Use a variable named `turn` to track whose turn it is.
+  // 1c) Use a variable named `winner` to represent if anyone has won yet.
+  // 1d) Use a variable named `tie` to represent if the game has ended in a tie.
+let board, turn, winner, tie
 
 
 
@@ -16,17 +22,7 @@
 
 /*-------------------------------- Functions --------------------------------*/
 
-/* STARTER PSEUDOCODE FROM LAB INSTRUCTIONS BELOW */
-// Step 1 - Define the required variables used to track the state of the game
-
-  // 1a) Use a variable named `board` to represent the state of the squares on
-  //     the board.
-
-  // 1b) Use a variable named `turn` to track whose turn it is.
-
-  // 1c) Use a variable named `winner` to represent if anyone has won yet.
-
-  // 1d) Use a variable named `tie` to represent if the game has ended in a tie.
+/* STARTER PSEUDOCODE FROM LAB INSTRUCTIONS BELOW --> steps will be moved into their respective sections as each step is completed */
 
 
 // Step 2 - Store cached element references.
