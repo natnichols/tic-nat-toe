@@ -13,8 +13,13 @@ let board, turn, winner, tie
 
 
 /*------------------------ Cached Element References ------------------------*/
-
-
+// Step 2 - Store cached element references.
+  // 2a) In a constant called `squareEls`, store the nine elements representing the squares on the page.
+  // 2b) In a constant called `messageEl`, store the element that displays the game's status on the page.
+const squareEls = document.getElementsByClassName("sqr")
+// console.log(squareEls)
+const messageEl = document.getElementById("message")
+// console.log(messageEl)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -25,13 +30,6 @@ let board, turn, winner, tie
 /* STARTER PSEUDOCODE FROM LAB INSTRUCTIONS BELOW --> steps will be moved into their respective sections as each step is completed */
 
 
-// Step 2 - Store cached element references.
-
-  // 2a) In a constant called `squareEls`, store the nine elements 
-  //    representing the squares on the page.
-
-  // 2b) In a constant called `messageEl`, store the element that displays the 
-  //    game's status on the page.
 
 
 // Step 3 - Upon loading, the game state should be initialized, and a function 
