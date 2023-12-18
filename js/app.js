@@ -65,14 +65,15 @@ function updateBoard() {
     if (board[idx] === 1) {
       // put an X in the square
       squareEls[idx].textContent = `X`
-      console.log(`X in this square`)
+      // console.log(`X in this square`)
     } else if (board[idx] === -1) {
       // put a Y in the square
-      // squareEls.textContent = `O`
-      console.log(`O in this square`)
+      squareEls[idx].textContent = `O`
+      // console.log(`O in this square`)
     } else {
       // Must display empty square so that board can be reset
-      console.log(`Mulder it's a null square`)
+      squareEls[idx].textContent = ``
+      // console.log(`Mulder it's a null square`)
     }
   })
 }
