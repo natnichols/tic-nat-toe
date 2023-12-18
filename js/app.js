@@ -23,6 +23,8 @@ const squareEls = document.querySelectorAll('.sqr')
 // console.log(squareEls)
 const messageEl = document.getElementById('message')
 // console.log(messageEl)
+const resetBtnEl = document.querySelector('button')
+// console.log(resetBtnEl)
 
 /*----- Event Listeners -----*/
 
@@ -30,11 +32,7 @@ squareEls.forEach(function(squareEl) {
   squareEl.addEventListener('click', handleClick)
 })
 
-
-// Step 7 - Create Reset functionality
-  // 7a) Add a reset button to the HTML document.
-  // 7b) Store the new reset button element as a cached element reference in a constant named `resetBtnEl`.
-  // 7c) Attach an event listener to the `resetBtnEl`. On the `'click'` event it should call the `init` function you created in step 3.
+resetBtnEl.addEventListener('click', init)
 
 
 /*----- Functions -----*/
@@ -123,7 +121,3 @@ function render() {
   // console.log(`Mulder it's rendering time`)
 }
 
-/* ------------------
-STARTER PSEUDOCODE FROM LAB INSTRUCTIONS BELOW --> 
-------------------- */
-  

@@ -1,5 +1,5 @@
 body {
-    background-color: gray;
+  background-color: gray;
 	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -7,6 +7,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 section.board {
@@ -14,6 +15,7 @@ section.board {
   grid-template-rows: repeat(3, 10vmin);
   grid-template-columns: repeat(3, 10vmin);
   grid-gap: 0vmin;
+  cursor: pointer;
 }
 
 div {
@@ -21,4 +23,22 @@ div {
   font-size: 8vmin;
   text-align: center;
   vertical-align: middle;
+}
+
+.sqr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin-top: 15px;
+  border-radius: 5px;
+  background-color: lightgreen;
+}
+
+button:hover {
+  background-color: pink;
+  cursor: pointer;
 }
