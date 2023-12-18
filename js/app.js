@@ -62,14 +62,22 @@ function init() {
   // 4f) Invoke both the `updateBoard` and the `updateMessage` functions inside of your `render` function.
 
 function updateBoard() {
-  console.log(`Mulder it's me`)
+  console.log(`Mulder it's me updating the board`)
   // step 4c starts here
 }
 // updateBoard() /* <-- call function to test `updateBoard` */
-  
+
+function updateMessage() {
+  console.log(`Mulder it's me updating the message`)
+  // step 4d starts here
+}
+// updateMessage() /* <-- call function to test `updateMessage` */
+
 function render() {
-  console.log(`Mulder it's me`)
   // this is for later during step 4f
+  updateBoard()
+  updateMessage()
+  console.log(`Mulder it's rendering time`)
 }
 // render() /* <-- call function to test `render` */
 
