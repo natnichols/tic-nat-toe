@@ -35,10 +35,10 @@ const messageEl = document.getElementById('message')
   // 3f) Set `tie` to false.
   // 3g) Call a function called `render` at the end of the `init` function.
 
-// init() /* <-- call function to test `init` */
+init() /* <-- call function to test `init` */
 
 function init() {
-  board = [null, null, null, null, null, null, null, null, null]
+  board = [null, -1, 1, null, null, null, null, null, null]
   turn = 1
   winner = false
   tie = false
@@ -61,20 +61,19 @@ function init() {
 
 function updateBoard() {
   // step 4c starts here
-  board = []
-  board.forEach(function (sqr) {
-    if (sqr === 1) {
+  board.forEach(function(sqrVal, idx) {
+    if (board[idx] === 1) {
       // put an X in the square
-      squareEls.textContent = `X`
-      // console.log(`X in this square`)
-    } else if (sqr === -1) {
+      // squareEls.textContent = `X`
+      console.log(`X in this square`)
+    } else if (board[idx] === -1) {
       // put a Y in the square
-      squareEls.textContent = `Y`
-      // console.log(`Y in this square`)
+      // squareEls.textContent = `O`
+      console.log(`O in this square`)
     } else {
-      // console.log(`Mulder it's a null square`)
+      // Must display empty square so that board can be reset
+      console.log(`Mulder it's a null square`)
     }
-
   })
 }
 // updateBoard() /* <-- call function to test `updateBoard` */
@@ -86,8 +85,8 @@ function updateMessage() {
 // updateMessage() /* <-- call function to test `updateMessage` */
 
 function render() {
-  // this is for later during step 4f
   updateBoard()
+  // this is for later during step 4f
   // updateMessage()
   // console.log(`Mulder it's rendering time`)
 }
