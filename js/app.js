@@ -16,10 +16,10 @@ let board, turn, winner, tie
 // Step 2 - Store cached element references.
   // 2a) In a constant called `squareEls`, store the nine elements representing the squares on the page.
   // 2b) In a constant called `messageEl`, store the element that displays the game's status on the page.
-const squareEls = document.getElementsByClassName("sqr")
-// console.log(squareEls)
-const messageEl = document.getElementById("message")
-// console.log(messageEl)
+const squareEls = document.querySelectorAll('.sqr')
+console.log(squareEls)
+const messageEl = document.getElementById('message')
+console.log(messageEl)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
