@@ -40,9 +40,9 @@ function init() {
   let winner = false
   let tie = false
   render()
-  console.log(board, turn, winner, tie, `Mulder it's the end of the init function`)
+  // console.log(board, turn, winner, tie, `Mulder it's the end of the init function`)
 }
-init() /* <-- call function to test `init` */
+// init() /* <-- call function to test `init` */
 
 // Step 4 - The state of the game should be rendered to the user
   // 4a) Create a function called `render`, then set it aside for now.
@@ -70,15 +70,15 @@ function updateBoard() {
       squareEls.textContent = `Y`
       // console.log(`Y in this square`)
     } else {
-      console.log(`Mulder it's a null square`)
+      // console.log(`Mulder it's a null square`)
     }
 
   })
 }
-updateBoard() /* <-- call function to test `updateBoard` */
+// updateBoard() /* <-- call function to test `updateBoard` */
 
 function updateMessage() {
-  console.log(`Mulder it's me updating the message`)
+  // console.log(`Mulder it's me updating the message`)
   // step 4d starts here
 }
 // updateMessage() /* <-- call function to test `updateMessage` */
@@ -87,7 +87,7 @@ function render() {
   // this is for later during step 4f
   updateBoard()
   // updateMessage()
-  console.log(`Mulder it's rendering time`)
+  // console.log(`Mulder it's rendering time`)
 }
 // render() /* <-- call function to test `render` */
 
