@@ -37,7 +37,16 @@ const messageEl = document.getElementById('message')
   // 6b) Attach an event listener to the game board (you can do this to each one of the existing `squareEls` with a `forEach` loop OR add a new cached element reference that will allow you to take advantage of event bubbling). On the `'click'` event, it should call the `handleClick` function you created in 6a.
   // 6c) Obtain the index of the square that was clicked by "extracting" the index from an `id` assigned to the target element in the HTML. Assign this to a constant called `sqIdx`.
   // 6d) If the `board` has a value at the `sqIdx`, immediately `return` because that square is already taken. Also, if `winner` is `true` immediately `return` because the game is over.
+squareEls.forEach(function(squareEl) {
+  squareEl.addEventListener('click', handleClick)
+})
 
+function handleClick(evt) {
+  const sqIdx = parseInt(evt.target.id.replace('sq', ' '))
+  if (board[sqIdx] || winner) {
+    return
+  }
+}
 
 // Step 6.1 - `placePiece`
   // 6.1a) Create a function named placePiece that accepts an `idx` parameter.
@@ -66,7 +75,7 @@ const messageEl = document.getElementById('message')
   // 6.5a) In our `handleClick` function, call `placePiece`, `checkForTie`, `checkForWinner`, and `switchPlayerTurn`. Don’t forget that `placePiece` needs `sqIdx` as an argument! 
   // 6.5b) Finally, now that all the state has been updated we need to render that updated state to the user by calling the `render` function that we wrote earlier.
 
-  
+
 // Step 7 - Create Reset functionality
   // 7a) Add a reset button to the HTML document.
   // 7b) Store the new reset button element as a cached element reference in a constant named `resetBtnEl`.
@@ -86,12 +95,15 @@ const messageEl = document.getElementById('message')
 init() /* <-- call function to test `init` */
 
 function init() {
-  board = [null, -1, 1, null, null, null, null, null, null]
+  board = [1, null, null, -1, null, null, null, null, null]
   turn = 1
   winner = false
   tie = false
   render()
 }
+
+// paste handleClick function here
+
 
 // Step 4 - The state of the game should be rendered to the user
   // 4a) Create a function called `render`, then set it aside for now.
