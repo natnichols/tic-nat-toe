@@ -35,10 +35,11 @@ const messageEl = document.getElementById("message")
   // 3f) Set `tie` to false.
   // 3g) Call a function called `render` at the end of the `init` function.
 function init() {
-  // console.log(`Mulder it's me`)
+  let board = [null, null, null, null, null, null, null, null, null]
+  // console.log(board, `Mulder it's me`)
 }
 
-
+init() /* <-- call function to test `init` */
 
 /* --- STARTER PSEUDOCODE FROM LAB INSTRUCTIONS BELOW --> steps will be moved into their respective sections as each step is completed --- */
 
