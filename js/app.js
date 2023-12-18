@@ -85,13 +85,20 @@ function updateBoard() {
 function updateMessage() {
   // console.log(`Mulder it's me updating the message`)
   // step 4d starts here
+  if () {
+
+  } else if () {
+
+  } else {
+
+  }
 }
 // updateMessage() /* <-- call function to test `updateMessage` */
 
 function render() {
   updateBoard()
   // this is for later during step 4f
-  // updateMessage()
+  updateMessage()
   // console.log(`Mulder it's rendering time`)
 }
 // render() /* <-- call function to test `render` */
