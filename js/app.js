@@ -34,6 +34,9 @@ const messageEl = document.getElementById("message")
   // 3e) Set the `winner` to false.
   // 3f) Set `tie` to false.
   // 3g) Call a function called `render` at the end of the `init` function.
+function init() {
+  // console.log(`Mulder it's me`)
+}
 
 
 
