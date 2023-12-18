@@ -40,20 +40,16 @@ function init() {
   let winner = false
   let tie = false
   render()
-  // console.log(board, turn, winner, tie, `Mulder it's me`)
+  console.log(board, turn, winner, tie, `Mulder it's the end of the init function`)
 }
-// init() /* <-- call function to test `init` */
+init() /* <-- call function to test `init` */
 
 // Step 4 - The state of the game should be rendered to the user
   // 4a) Create a function called `render`, then set it aside for now.
   // 4b) Create a function called `updateBoard`.
   // 4c) In the `updateBoard` function, loop over `board` and for each element:
-  //     - Use the current index of the iteration to access the corresponding 
-  //       square in the `squareEls` node list (array-like structure).
-  //     - Style that square however you wish, dependent on the value  
-  //       contained in the current cell being iterated over (`-1`, `1`, or
-  //       `null`). To keep it simple, start with just putting a letter in 
-  //       each square depending on what the the value of each cell is.
+  //     - Use the current index of the iteration to access the corresponding square in the `squareEls` node list (array-like structure).
+  //     - Style that square however you wish, dependent on the value contained in the current cell being iterated over (`-1`, `1`, or `null`). To keep it simple, start with just putting a letter in each square depending on what the the value of each cell is.
   // 4d) Create a function called `updateMessage`
   // 4e) In the `updateMessage` function, render a message based on the current game state:
   //     - If both `winner` and `tie` have a value of false (meaning the game is still in progress), render whose turn it is.
@@ -62,10 +58,24 @@ function init() {
   // 4f) Invoke both the `updateBoard` and the `updateMessage` functions inside of your `render` function.
 
 function updateBoard() {
-  console.log(`Mulder it's me updating the board`)
   // step 4c starts here
+  board = []
+  board.forEach(function (sqr) {
+    if (sqr === 1) {
+      // put an X in the square
+      squareEls.textContent = `X`
+      // console.log(`X in this square`)
+    } else if (sqr === -1) {
+      // put a Y in the square
+      squareEls.textContent = `Y`
+      // console.log(`Y in this square`)
+    } else {
+      console.log(`Mulder it's a null square`)
+    }
+
+  })
 }
-// updateBoard() /* <-- call function to test `updateBoard` */
+updateBoard() /* <-- call function to test `updateBoard` */
 
 function updateMessage() {
   console.log(`Mulder it's me updating the message`)
@@ -76,7 +86,7 @@ function updateMessage() {
 function render() {
   // this is for later during step 4f
   updateBoard()
-  updateMessage()
+  // updateMessage()
   console.log(`Mulder it's rendering time`)
 }
 // render() /* <-- call function to test `render` */
