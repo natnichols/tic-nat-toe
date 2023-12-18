@@ -75,10 +75,9 @@ function checkForTie() {
 
 function checkForWinner() {
   winningCombos.forEach(combo => {
-    console.log('winner function running')
-    //need to make sure ALL winner combos work!! **appears to not be working if there is 1 square blank after O's winning combo is played**
+    // console.log('winner function running')
     if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]) === 3) {
-      console.log(turn)
+      // console.log(turn)
       winner = true
       confetti.start(2000)
     }
