@@ -42,22 +42,11 @@ function init() {
   render()
   // console.log(board, turn, winner, tie, `Mulder it's me`)
 }
-
-init() /* <-- call function to test `init` */
-
-/* --- STARTER PSEUDOCODE FROM LAB INSTRUCTIONS BELOW --> steps will be moved into their respective sections as each step is completed --- */
-
-
-
-
-
+// init() /* <-- call function to test `init` */
 
 // Step 4 - The state of the game should be rendered to the user
-
   // 4a) Create a function called `render`, then set it aside for now.
-
   // 4b) Create a function called `updateBoard`.
-
   // 4c) In the `updateBoard` function, loop over `board` and for each element:
   //     - Use the current index of the iteration to access the corresponding 
   //       square in the `squareEls` node list (array-like structure).
@@ -65,19 +54,34 @@ init() /* <-- call function to test `init` */
   //       contained in the current cell being iterated over (`-1`, `1`, or
   //       `null`). To keep it simple, start with just putting a letter in 
   //       each square depending on what the the value of each cell is.
-
   // 4d) Create a function called `updateMessage`
-  
-  // 4e) In the `updateMessage` function, render a message based on the 
-  //     current game state:
-  //     - If both `winner` and `tie` have a value of false (meaning the game 
-  //       is still in progress), render whose turn it is.
+  // 4e) In the `updateMessage` function, render a message based on the current game state:
+  //     - If both `winner` and `tie` have a value of false (meaning the game is still in progress), render whose turn it is.
   //     - If `winner` is false, but `tie` is true, render a tie message.
-  //     - Otherwise, render a congratulatory message to the player that has 
-  //       won.
+  //     - Otherwise, render a congratulatory message to the player that has won.
+  // 4f) Invoke both the `updateBoard` and the `updateMessage` functions inside of your `render` function.
 
-  // 4f) Invoke both the `updateBoard` and the `updateMessage` functions
-  //     inside of your `render` function.
+function updateBoard() {
+  console.log(`Mulder it's me`)
+  // step 4c starts here
+}
+// updateBoard() /* <-- call function to test `updateBoard` */
+  
+function render() {
+  console.log(`Mulder it's me`)
+  // this is for later during step 4f
+}
+// render() /* <-- call function to test `render` */
+
+/* ------------------
+STARTER PSEUDOCODE FROM LAB INSTRUCTIONS BELOW --> steps will be moved into their respective sections as each step is completed 
+------------------- */
+
+
+
+
+
+
 
 // Step 5 - Define the required constants
 
