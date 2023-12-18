@@ -68,8 +68,10 @@ function checkForTie() {
 
 function checkForWinner() {
   winningCombos.forEach(function(combo) {
+    //need to make sure ALL winner combos work!!
     if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] === 3)) {
       winner = true
+      confetti.start(2000)
     }
   })
 }
