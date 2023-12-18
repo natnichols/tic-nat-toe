@@ -48,8 +48,11 @@ function init() {
 }
 
 function handleClick(evt) {
-  const sqIdx = parseInt(evt.target.id.replace('sq', ' '))
-  if (board[sqIdx] || winner) return
+  const sqIdx = parseInt(evt.target.id.replace('sq', ''))
+  if (board[sqIdx] || winner) {
+    //add in buzzer noise to stop user from clicking sq
+    return
+  }
   placePiece(sqIdx)
   checkForTie()
   checkForWinner()
@@ -62,13 +65,16 @@ function placePiece(idx) {
 }
 
 function checkForTie() {
-  if (board.includes(null)) return
-  tie = true
+  if (board.includes(null)) {
+    return
+  } else {
+    tie = true
+  }
 }
 
 function checkForWinner() {
   winningCombos.forEach(function(combo) {
-    //need to make sure ALL winner combos work!!
+    //need to make sure ALL winner combos work!! **appears to not be working if there is 1 square blank after O's winning combo is played**
     if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]] === 3)) {
       winner = true
       confetti.start(2000)

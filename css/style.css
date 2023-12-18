@@ -7,6 +7,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -20,9 +21,11 @@ section.board {
 
 div {
   border: 3px solid black;
-  font-size: 8vmin;
-  text-align: center;
-  vertical-align: middle;
+  font-size: 7vmin;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  padding: 5px;
 }
 
 .sqr {
