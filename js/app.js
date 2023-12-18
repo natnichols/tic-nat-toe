@@ -61,12 +61,12 @@ function init() {
 function updateBoard() {
   // step 4c starts here
   board.forEach(function(sqrVal, idx) {
-    if (board[idx] === 1) {
+    if (sqrVal === 1) {
       // put an X in the square
       squareEls[idx].textContent = `X`
       squareEls[idx].style.backgroundColor = `indigo`
       // console.log(`X in this square`)
-    } else if (board[idx] === -1) {
+    } else if (sqrVal === -1) {
       // put a Y in the square
       squareEls[idx].textContent = `O`
       squareEls[idx].style.backgroundColor = `lightseagreen`
