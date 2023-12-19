@@ -1,16 +1,16 @@
 body {
   /* background-color: gray; */
 	/* Use a system font, if none are available use an available sans-sarif   font */
-	font-family: 'Saira Semi Condensed', sans-serif;
-	color: #0b2c4e;
+	font-family: 'Rubik Doodle Shadow', sans-serif;
+	color: #99E1D9;
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #faf0ca;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23ee964b' fill-opacity='0.17'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: #5d576b;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23fffae3' fill-opacity='0.27' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   letter-spacing: 1px;
 }
 
@@ -20,16 +20,17 @@ section.board {
   grid-template-columns: repeat(3, 10vmin);
   grid-gap: 0vmin;
   cursor: pointer;
-  background-color: #F4D35E;
+  /* background-color: #5d576b;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23fffae3' fill-opacity='0.27' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E"); */
 }
 
 div {
-  border: 1.5px solid #0b2c4e;
+  /* border: 1.5px solid #5D576B; */
   font-size: 7vmin;
   align-items: center;
   justify-content: center;
-  /* margin: 3px;
-  padding: 5px; */
+  margin: 3px;
+  padding: 5px;
   display: flex;
 }
 
@@ -43,30 +44,30 @@ div {
 button {
   margin-top: 20px;
   border-radius: 5px;
-  color: #0b2c4e;
-  background-color: #EE9643;
+  color: #5D576B;
+  background-color: #99E1D9;
   font-size: 24px;
   padding: 8px 12px;
-  font-family: 'Saira Semi Condensed', sans-serif;
+  font-family: 'Rubik Doodle Shadow', sans-serif;
   letter-spacing: 0.5px;
   font-weight: bold;
 }
 
 button:hover {
-  color: #FAF0CA;
-  background-color: #0D3B66;
+  color: #FFFAE3;
+  background-color: #F7567C;
   cursor: pointer;
 }
 
-.left {
-  border-left: 3px solid #0b2c4e;
+/* .left {
+  border-left: 3px solid #5D576B;
 }
 .top {
-  border-top: 3px solid #0b2c4e;
+  border-top: 3px solid #5D576B;
 }
 .right {
-  border-right: 3px solid #0b2c4e;
+  border-right: 3px solid #5D576B;
 }
 .bottom {
-  border-bottom: 3px solid #0b2c4e;
-}
+  border-bottom: 3px solid #5D576B;
+} */

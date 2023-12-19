@@ -107,20 +107,21 @@ function updateBoard() {
     if (sqrVal === 1) {
       // put an X in the square
       squareEls[idx].textContent = `X`
-      squareEls[idx].style.backgroundColor = `#F95738`
+      squareEls[idx].style.backgroundColor = `#F7567C`
+      squareEls[idx].style.color = `#FAF0CA`
       squareEls[idx].classList.add('animate__animated', 'animate__jello')
     } 
     if (sqrVal === -1) {
       // put an O in the square
       squareEls[idx].textContent = `O`
-      squareEls[idx].style.backgroundColor = `#0D3B66`
-      squareEls[idx].style.color = `#FAF0CA`
+      squareEls[idx].style.backgroundColor = `#FAF0CA`
+      squareEls[idx].style.color = `#F7567C`
       squareEls[idx].classList.add('animate__animated', 'animate__jello')
     } 
     if (sqrVal === null){
       // Must display empty square so that board can be reset
       squareEls[idx].textContent = ``
-      squareEls[idx].style.backgroundColor = `#F4D35E`
+      squareEls[idx].style.backgroundColor = `#FAF0CA`
       squareEls[idx].classList.remove('animate__animated', 'animate__jello')
     }
   })
