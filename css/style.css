@@ -2,6 +2,7 @@ body {
   /* background-color: gray; */
 	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: 'Rubik Doodle Shadow', sans-serif;
+  font-size: 20px;
 	color: #99E1D9;
   margin: 0;
   height: 100vh;
@@ -26,12 +27,13 @@ section.board {
 
 div {
   /* border: 1.5px solid #5D576B; */
-  font-size: 7vmin;
+  font-size: 6vmin;
   align-items: center;
   justify-content: center;
   margin: 3px;
   padding: 5px;
   display: flex;
+  border-radius: 2px;
 }
 
 .sqr {
@@ -46,7 +48,7 @@ button {
   border-radius: 5px;
   color: #5D576B;
   background-color: #99E1D9;
-  font-size: 24px;
+  font-size: 18px;
   padding: 8px 12px;
   font-family: 'Rubik Doodle Shadow', sans-serif;
   letter-spacing: 0.5px;
