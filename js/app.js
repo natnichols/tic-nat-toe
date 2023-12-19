@@ -13,10 +13,10 @@ const winningCombos = [
 
 const hornSound = new Audio('../assets/audio/horn.wav')
 const meowSound = new Audio('../assets/audio/meow.wav')
-const laserSound = new Audio('../assets/audio/laser.wav')
+const chalkSound = new Audio('../assets/audio/chalkwriting.wav')
 hornSound.volume = 0.3
 meowSound.volume = 0.3
-laserSound.volume = 0.3
+chalkSound.volume = 0.3
 
 /*----- Variables (state) -----*/
 
@@ -69,7 +69,7 @@ function handleClick(evt) {
 
 function placePiece(idx) {
   board[idx] = turn
-  laserSound.play()
+  chalkSound.play() /* I feel like I hear slight delay after click - can I fix that without altering the audio file? Or does it sound fine?*/
 }
 
 function checkForTie() {
