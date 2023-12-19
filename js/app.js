@@ -31,11 +31,8 @@ let board, turn, winner, tie
 /*----- Cached Element References -----*/
 
 const squareEls = document.querySelectorAll('.sqr')
-// console.log(squareEls)
 const messageEl = document.getElementById('message')
-// console.log(messageEl)
 const resetBtnEl = document.getElementById('reset')
-// console.log(resetBtnEl)
 
 /*----- Event Listeners -----*/
 
@@ -48,7 +45,7 @@ resetBtnEl.addEventListener('click', init)
 
 /*----- Functions -----*/
 
-init() /* <-- call function to test `init` */
+init()
 
 function init() {
   board = [null, null, null, null, null, null, null, null, null]
@@ -74,25 +71,25 @@ function handleClick(evt) {
 
 function placePiece(idx) {
   board[idx] = turn
-  chalkSound.play() /* I feel like I hear slight delay after click - can I fix that without altering the audio file? Or does it sound fine?*/
+  chalkSound.play() /* I feel like I hear slight delay after click - can I fix that without altering the audio file to make the chalk noise happen right as you click? Or does it sound fine? Sound also does not play if you click the squares too quickly */
 }
 
 function checkForTie() {
   if (board.includes(null)) {
     return
   } else {
-    console.log('tie function running')
+    // console.log('tie function running')
     tie = true
     setTimeout(() => {meowSound.play()}, 500);
     meowSound.play()
-    console.log(`Meow Meow Meow, there should NOT be a horn sound`)
+    // console.log(`Meow Meow Meow, this should NOT play if there is a winner`)
   }
 }
-/* Something is wrong with either checkForTie or checkForWinner (or both!) - if the player wins by placing the last piece on the board, both the meow and horn sound play instead of JUST the horn*/
+/* Something is wrong with either checkForTie or checkForWinner (or both!) - if the player wins by placing the last piece on the board, both the meow and horn sound play instead of JUST the horn */
 function checkForWinner() {
   winningCombos.forEach(combo => {
     if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]) === 3) {
-      console.log('winner function running, NO MEOWS ALLOWED')
+      // console.log('winner function running, NO MEOWS ALLOWED')
       winner = true
       setTimeout(() => {hornSound.play()}, 750);
       hornSound.play()
@@ -110,21 +107,18 @@ function switchPlayerTurn() {
 function updateBoard() {
   board.forEach(function(sqrVal, idx) {
     if (sqrVal === 1) {
-      // put an X in the square
       squareEls[idx].textContent = `X`
       squareEls[idx].style.backgroundColor = `#F7567C`
       squareEls[idx].style.color = `#FFFAE3`
       squareEls[idx].classList.add('animate__animated', 'animate__jello')
     } 
     if (sqrVal === -1) {
-      // put an O in the square
       squareEls[idx].textContent = `O`
       squareEls[idx].style.backgroundColor = `#FFFAE3`
       squareEls[idx].style.color = `#F7567C`
       squareEls[idx].classList.add('animate__animated', 'animate__jello')
     } 
     if (sqrVal === null){
-      // Must display empty square so that board can be reset
       squareEls[idx].textContent = ``
       squareEls[idx].style.backgroundColor = `#FFFAE3`
       squareEls[idx].classList.remove('animate__animated', 'animate__jello')

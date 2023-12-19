@@ -1,6 +1,4 @@
 body {
-  /* background-color: gray; */
-	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: 'Rubik Doodle Shadow', sans-serif;
   font-size: 25px;
 	color: #99E1D9;
@@ -31,19 +29,17 @@ section.board {
   grid-gap: 0vmin;
   cursor: pointer;
   margin: 30px;
-  /* background-color: #5d576b;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23fffae3' fill-opacity='0.27' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E"); */
 }
 
 div {
-  /* border: 1.5px solid #5D576B; */
   font-size: 6vmin;
   align-items: center;
   justify-content: center;
   margin: 3px;
   padding: 5px;
   display: flex;
-  border-radius: 2px;
+  border-radius: 3px;
+  fill-opacity: (50%);
 }
 
 .sqr {
@@ -61,7 +57,7 @@ button {
   font-size: 18px;
   padding: 8px 12px;
   font-family: 'Rubik Doodle Shadow', sans-serif;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
   font-weight: bold;
 }
 
@@ -70,16 +66,3 @@ button:hover {
   background-color: #F7567C;
   cursor: pointer;
 }
-
-/* .left {
-  border-left: 3px solid #5D576B;
-}
-.top {
-  border-top: 3px solid #5D576B;
-}
-.right {
-  border-right: 3px solid #5D576B;
-}
-.bottom {
-  border-bottom: 3px solid #5D576B;
-} */
