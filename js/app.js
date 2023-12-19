@@ -14,9 +14,13 @@ const winningCombos = [
 const hornSound = new Audio('../assets/audio/horn.wav')
 const meowSound = new Audio('../assets/audio/meow.wav')
 const chalkSound = new Audio('../assets/audio/chalkwriting.wav')
+const eraseChalkSound = new Audio('../assets/audio/erasechalk.wav')
+const wimpyBuzzSound = new Audio('../assets/audio/wimpybuzz.wav')
 hornSound.volume = 0.3
 meowSound.volume = 0.3
 chalkSound.volume = 0.3
+eraseChalkSound.volume = 0.3
+wimpyBuzzSound.volume = 0.3
 
 /*----- Variables (state) -----*/
 
@@ -52,12 +56,13 @@ function init() {
   winner = false
   tie = false
   render()
+  eraseChalkSound.play()
 }
 
 function handleClick(evt) {
   const sqIdx = parseInt(evt.target.id.replace('sq', ''))
   if (board[sqIdx] || winner) {
-    //add in buzzer noise to stop user from clicking sq
+    wimpyBuzzSound.play()
     return
   }
   placePiece(sqIdx)
@@ -108,20 +113,20 @@ function updateBoard() {
       // put an X in the square
       squareEls[idx].textContent = `X`
       squareEls[idx].style.backgroundColor = `#F7567C`
-      squareEls[idx].style.color = `#FAF0CA`
+      squareEls[idx].style.color = `#FFFAE3`
       squareEls[idx].classList.add('animate__animated', 'animate__jello')
     } 
     if (sqrVal === -1) {
       // put an O in the square
       squareEls[idx].textContent = `O`
-      squareEls[idx].style.backgroundColor = `#FAF0CA`
+      squareEls[idx].style.backgroundColor = `#FFFAE3`
       squareEls[idx].style.color = `#F7567C`
       squareEls[idx].classList.add('animate__animated', 'animate__jello')
     } 
     if (sqrVal === null){
       // Must display empty square so that board can be reset
       squareEls[idx].textContent = ``
-      squareEls[idx].style.backgroundColor = `#FAF0CA`
+      squareEls[idx].style.backgroundColor = `#FFFAE3`
       squareEls[idx].classList.remove('animate__animated', 'animate__jello')
     }
   })
@@ -131,7 +136,8 @@ function updateMessage() {
   if (!winner && !tie) {
     messageEl.textContent = `It's ${turn === 1 ? 'X' : 'O'}'s turn!`
   } else if (!winner && tie) {
-    messageEl.textContent = `It's a tie! That's called a Cat's Game! 🐈‍⬛`
+    messageEl.textContent = `It's a tie! That's called a Cat's Game! 🐈`
+    messageEl.style.color = `#FAF0CA`
   } else {
     messageEl.textContent = `Congratulations, ${turn === 1 ? 'X' : 'O'} wins Tic-Tac-Toe!`
   }

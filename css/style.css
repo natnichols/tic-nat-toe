@@ -2,7 +2,7 @@ body {
   /* background-color: gray; */
 	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: 'Rubik Doodle Shadow', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
 	color: #99E1D9;
   margin: 0;
   height: 100vh;
@@ -15,12 +15,22 @@ body {
   letter-spacing: 1px;
 }
 
+h2#message {
+  font-size: 28px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 section.board {
   display: grid;
   grid-template-rows: repeat(3, 10vmin);
   grid-template-columns: repeat(3, 10vmin);
   grid-gap: 0vmin;
   cursor: pointer;
+  margin: 30px;
   /* background-color: #5d576b;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23fffae3' fill-opacity='0.27' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E"); */
 }
