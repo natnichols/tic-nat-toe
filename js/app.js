@@ -61,9 +61,8 @@ function handleClick(evt) {
     return
   }
   placePiece(sqIdx)
-  console.log(board)
-  checkForWinner()
   checkForTie()
+  checkForWinner()
   switchPlayerTurn()
   render()
 }
@@ -77,17 +76,18 @@ function checkForTie() {
   if (board.includes(null)) {
     return
   } else {
+    console.log('tie function running')
     tie = true
     setTimeout(() => {meowSound.play()}, 500);
     meowSound.play()
+    console.log(`Meow Meow Meow, there should NOT be a horn sound`)
   }
 }
-
+/* Something is wrong with either checkForTie or checkForWinner (or both!) - if the player wins by placing the last piece on the board, both the meow and horn sound play instead of JUST the horn*/
 function checkForWinner() {
   winningCombos.forEach(combo => {
-    // console.log('winner function running')
     if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]) === 3) {
-      // console.log(turn)
+      console.log('winner function running, NO MEOWS ALLOWED')
       winner = true
       setTimeout(() => {hornSound.play()}, 750);
       hornSound.play()
@@ -103,36 +103,30 @@ function switchPlayerTurn() {
 }
 
 function updateBoard() {
-  // step 4c starts here
   board.forEach(function(sqrVal, idx) {
     if (sqrVal === 1) {
       // put an X in the square
       squareEls[idx].textContent = `X`
       squareEls[idx].style.backgroundColor = `#F95738`
       squareEls[idx].classList.add('animate__animated', 'animate__jello')
-      // console.log(`X in this square`)
     } 
     if (sqrVal === -1) {
-      // put a Y in the square
+      // put an O in the square
       squareEls[idx].textContent = `O`
       squareEls[idx].style.backgroundColor = `#0D3B66`
       squareEls[idx].style.color = `#FAF0CA`
       squareEls[idx].classList.add('animate__animated', 'animate__jello')
-      // console.log(`O in this square`)
     } 
     if (sqrVal === null){
       // Must display empty square so that board can be reset
       squareEls[idx].textContent = ``
       squareEls[idx].style.backgroundColor = `#F4D35E`
       squareEls[idx].classList.remove('animate__animated', 'animate__jello')
-      // console.log(`Mulder it's a null square`)
     }
   })
 }
 
 function updateMessage() {
-  // console.log(`Mulder it's me updating the message`)
-  // step 4d starts here
   if (!winner && !tie) {
     messageEl.textContent = `It's ${turn === 1 ? 'X' : 'O'}'s turn!`
   } else if (!winner && tie) {
@@ -144,8 +138,6 @@ function updateMessage() {
 
 function render() {
   updateBoard()
-  // this is for later during step 4f
   updateMessage()
-  // console.log(`Mulder it's rendering time`)
 }
 
