@@ -1,1 +1,3 @@
-# tic-tac-toe starter code
+# My Tic-Tac-Toe project
+
+## forked from GA SEI Repository
